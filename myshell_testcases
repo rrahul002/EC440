@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Test Case 1: Test basic command execution
+echo "Test Case 1: Basic Command Execution"
+echo "ls" | ./myshell
+
+# Test Case 2: Test command with arguments
+echo "Test Case 2: Command with Arguments"
+echo "ls -l" | ./myshell
+
+# Test Case 3: Test input/output redirection
+echo "Test Case 3: Input/Output Redirection"
+echo "ls > output.txt" | ./myshell
+cat output.txt
+
+# Test Case 4: Test piping
+echo "Test Case 4: Piping"
+echo "ls | wc -l" | ./myshell
+
+# Test Case 5: Test background execution
+echo "Test Case 5: Background Execution"
+echo "ls &" | ./myshell
+
+# Test Case 6: Test error handling
+echo "Test Case 6: Error Handling"
+echo "unknown_command" | ./myshell
+
+# Test Case 7: Test Ctrl-D (End of Input)
+echo "Test Case 7: End of Input (Ctrl-D)"
+echo -e "ls\npwd\nexit" | ./myshell
